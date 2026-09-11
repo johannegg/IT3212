@@ -12,8 +12,8 @@ env/
 .venv/
 
 # OS-specific
-.DS_Store          # macOS
-Thumbs.db          # Windows
+.DS_Store          
+Thumbs.db          
 
 # Editor/IDE
 .vscode/
