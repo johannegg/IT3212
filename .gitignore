@@ -1,1 +1,23 @@
+# Jupyter
 .ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# OS-specific
+.DS_Store          # macOS
+Thumbs.db          # Windows
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Environment variables
+.env
