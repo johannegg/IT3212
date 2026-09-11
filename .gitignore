@@ -1,3 +1,6 @@
+# Data files (too large for git)
+data/
+
 # Jupyter
 .ipynb_checkpoints/
 
