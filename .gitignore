@@ -1,5 +1,6 @@
 # Data files (too large for git)
 data/
+Assignment2/vehicles/
 
 # Jupyter
 .ipynb_checkpoints/
