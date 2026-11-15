@@ -1,0 +1,44 @@
+{
+  "algo": "q",
+  "setting": {
+    "name": "A",
+    "sticky": 0.0,
+    "step_penalty": 0.0,
+    "maze": 0,
+    "success_dots": 50,
+    "success_bonus": 25.0,
+    "reward_mode": "score+success",
+    "max_steps": 2000,
+    "noop_max": 30
+  },
+  "seed": 2,
+  "budget_env_steps": 300000,
+  "hyperparameters": {
+    "alpha": 0.1,
+    "gamma": 0.99,
+    "eps_start": 1.0,
+    "eps_end": 0.05,
+    "eps_decay_frac": 0.5
+  },
+  "eval_every": 25000,
+  "curve_episodes": 10,
+  "curve_eval_mode": "greedy",
+  "out_root": "records/part2/runs",
+  "software": {
+    "python": "3.13.0",
+    "numpy": "2.5.3",
+    "torch": "2.14.1",
+    "gymnasium": "1.4.0",
+    "ale_py": "0.12.1",
+    "platform": "macOS-15.5-arm64-arm-64bit-Mach-O",
+    "cpu": "arm",
+    "torch_threads": 1
+  },
+  "started": "2026-11-14 15:18:16",
+  "finished": "2026-11-14 15:22:28",
+  "runtime_seconds": 252.4,
+  "train_env_steps": 300002,
+  "train_episodes": 1066,
+  "note_runtime": "runtime includes the periodic learning-curve evaluations",
+  "q_states_visited": 554
+}

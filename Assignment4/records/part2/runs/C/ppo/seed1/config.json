@@ -1,0 +1,48 @@
+{
+  "algo": "ppo",
+  "setting": {
+    "name": "C",
+    "sticky": 0.25,
+    "step_penalty": 0.05,
+    "maze": 0,
+    "success_dots": 50,
+    "success_bonus": 25.0,
+    "reward_mode": "score+success",
+    "max_steps": 2000,
+    "noop_max": 30
+  },
+  "seed": 1,
+  "budget_env_steps": 300000,
+  "hyperparameters": {
+    "lr": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip": 0.2,
+    "ent_coef": 0.01,
+    "vf_coef": 0.5,
+    "epochs": 4,
+    "rollout": 2048,
+    "minibatch": 256,
+    "hidden": 64
+  },
+  "eval_every": 25000,
+  "curve_episodes": 10,
+  "curve_eval_mode": "argmax",
+  "out_root": "records/part2/runs",
+  "software": {
+    "python": "3.13.0",
+    "numpy": "2.5.3",
+    "torch": "2.14.1",
+    "gymnasium": "1.4.0",
+    "ale_py": "0.12.1",
+    "platform": "macOS-15.5-arm64-arm-64bit-Mach-O",
+    "cpu": "arm",
+    "torch_threads": 1
+  },
+  "started": "2026-11-14 15:08:38",
+  "finished": "2026-11-14 15:13:28",
+  "runtime_seconds": 289.9,
+  "train_env_steps": 300000,
+  "train_episodes": 866,
+  "note_runtime": "runtime includes the periodic learning-curve evaluations"
+}
