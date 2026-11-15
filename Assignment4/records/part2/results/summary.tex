@@ -1,0 +1,19 @@
+% Values are mean ± standard deviation across trained agents (one value per training seed); each agent was evaluated for 200 held-out episodes. Returns in Setting C include the step penalty and are not comparable with A/B; compare success and failure rates instead. Hardware: arm.
+\begin{tabular}{lllllrrrrrrrr}
+\hline
+Eval & Trained in & Algorithm & Policy & Seeds & Success & Failure & Timeout & Return & Length (success) & Length (failure) & Train steps & Train time (min) \\
+\hline
+A & A & PPO & argmax & 5 & 0.56 $\pm$ 0.23 & 0.44 $\pm$ 0.23 & 0.00 $\pm$ 0.00 & 118.2 $\pm$ 13.7 & 240 $\pm$ 20 & 273 $\pm$ 22 & 300000 $\pm$ 0 & 4.5 $\pm$ 0.2 \\
+A & A & PPO & sampled & 5 & 0.66 $\pm$ 0.20 & 0.34 $\pm$ 0.20 & 0.00 $\pm$ 0.00 & 115.9 $\pm$ 10.1 & 259 $\pm$ 24 & 251 $\pm$ 17 & 300000 $\pm$ 0 & 4.5 $\pm$ 0.2 \\
+A & A & Q-learning & greedy & 5 & 0.03 $\pm$ 0.07 & 0.97 $\pm$ 0.07 & 0.00 $\pm$ 0.00 & 22.7 $\pm$ 11.4 & 180 $\pm$ 0 & 202 $\pm$ 40 & 300000 $\pm$ 1 & 4.4 $\pm$ 0.2 \\
+B & B & PPO & argmax & 5 & 0.69 $\pm$ 0.18 & 0.31 $\pm$ 0.18 & 0.00 $\pm$ 0.00 & 112.2 $\pm$ 11.9 & 237 $\pm$ 31 & 229 $\pm$ 16 & 300013 $\pm$ 29 & 4.8 $\pm$ 0.2 \\
+B & B & PPO & sampled & 5 & 0.71 $\pm$ 0.16 & 0.29 $\pm$ 0.16 & 0.00 $\pm$ 0.00 & 113.6 $\pm$ 7.4 & 251 $\pm$ 19 & 240 $\pm$ 10 & 300013 $\pm$ 29 & 4.8 $\pm$ 0.2 \\
+B & B & Q-learning & greedy & 5 & 0.01 $\pm$ 0.01 & 0.99 $\pm$ 0.01 & 0.00 $\pm$ 0.00 & 21.1 $\pm$ 8.7 & 225 $\pm$ 102 & 195 $\pm$ 47 & 300013 $\pm$ 19 & 4.3 $\pm$ 0.1 \\
+C & C & PPO & argmax & 5 & 0.51 $\pm$ 0.27 & 0.49 $\pm$ 0.27 & 0.00 $\pm$ 0.00 & 96.4 $\pm$ 9.7 & 250 $\pm$ 29 & 242 $\pm$ 27 & 300023 $\pm$ 38 & 4.9 $\pm$ 0.0 \\
+C & C & PPO & sampled & 5 & 0.59 $\pm$ 0.20 & 0.41 $\pm$ 0.20 & 0.00 $\pm$ 0.00 & 98.3 $\pm$ 11.8 & 265 $\pm$ 20 & 235 $\pm$ 22 & 300023 $\pm$ 38 & 4.9 $\pm$ 0.0 \\
+C & C & Q-learning & greedy & 5 & 0.01 $\pm$ 0.01 & 0.99 $\pm$ 0.01 & 0.00 $\pm$ 0.00 & 20.4 $\pm$ 15.0 & 328 $\pm$ 54 & 199 $\pm$ 64 & 300016 $\pm$ 37 & 4.0 $\pm$ 0.5 \\
+D & B & PPO & argmax & 5 & 0.41 $\pm$ 0.31 & 0.59 $\pm$ 0.31 & 0.00 $\pm$ 0.00 & 70.5 $\pm$ 40.2 & 286 $\pm$ 31 & 253 $\pm$ 72 & 300013 $\pm$ 29 & 4.8 $\pm$ 0.2 \\
+D & B & PPO & sampled & 5 & 0.51 $\pm$ 0.22 & 0.49 $\pm$ 0.22 & 0.00 $\pm$ 0.00 & 88.1 $\pm$ 24.5 & 289 $\pm$ 12 & 259 $\pm$ 45 & 300013 $\pm$ 29 & 4.8 $\pm$ 0.2 \\
+D & B & Q-learning & greedy & 5 & 0.00 $\pm$ 0.01 & 1.00 $\pm$ 0.01 & 0.00 $\pm$ 0.00 & 12.8 $\pm$ 8.9 & 228 $\pm$ 18 & 155 $\pm$ 48 & 300013 $\pm$ 19 & 4.3 $\pm$ 0.1 \\
+\hline
+\end{tabular}
