@@ -1,0 +1,128 @@
+2026-11-25 17:40:51 ROUND 1: 20 settings per model, 5 seeds, budget 300000
+2026-11-25 17:40:51 runs: 200, to do 200
+2026-11-25 18:13:29 40 of 200 runs finished
+2026-11-25 18:41:17 80 of 200 runs finished
+2026-11-25 19:11:15 120 of 200 runs finished
+2026-11-25 19:40:17 160 of 200 runs finished
+2026-11-25 20:06:36 200 of 200 runs finished
+2026-11-25 20:06:36 round 1 q: the kept now average 2847; last round's 8 re-tested on new seeds: -; best 3261, median 1921, worst 775
+2026-11-25 20:06:36    q kept q-r1-12 (random) score 3261 (n 5, lowest seed 2692) success 0.04 {'life_penalty': 218.3535, 'ghost_value': 2.0832, 'gamma': 0.8468, 'alpha': 0.1524, 'eps_end': 0.0186, 'eps_frac': 0.3881, 'lam': 0.6643, 'q0': 45.3563}
+2026-11-25 20:06:36    q kept q-r1-07 (random) score 3116 (n 5, lowest seed 2566) success 0.06 {'life_penalty': 413.7555, 'ghost_value': 1.204, 'gamma': 0.9436, 'alpha': 0.0079, 'eps_end': 0.0111, 'eps_frac': 0.1258, 'lam': 0.2666, 'q0': 66.4218}
+2026-11-25 20:06:36    q kept q-r1-10 (random) score 2530 (n 5, lowest seed 1856) success 0.01 {'life_penalty': 10.1448, 'ghost_value': 2.2501, 'gamma': 0.8693, 'alpha': 0.0298, 'eps_end': 0.0897, 'eps_frac': 0.5508, 'lam': 0.2711, 'q0': 14.7112}
+2026-11-25 20:06:36    q kept q-r1-09 (random) score 2481 (n 5, lowest seed 2072) success 0.00 {'life_penalty': 188.5825, 'ghost_value': 2.9854, 'gamma': 0.9797, 'alpha': 0.0485, 'eps_end': 0.0167, 'eps_frac': 0.6049, 'lam': 0.6297, 'q0': 85.7217}
+2026-11-25 20:06:36 round 1 ppo: the kept now average 13104; last round's 8 re-tested on new seeds: -; best 16072, median 7515, worst 3130
+2026-11-25 20:06:36    ppo kept ppo-r1-12 (random) score 16072 (n 5, lowest seed 13071) success 0.93 {'life_penalty': 354.5246, 'ghost_value': 0.7276, 'gamma': 0.9391, 'lr': 0.0001, 'ent_coef': 0.0018, 'epochs': 7, 'gae_lambda': 0.8394, 'reward_scale': 0.016}
+2026-11-25 20:06:36    ppo kept ppo-r1-15 (random) score 13531 (n 5, lowest seed 8804) success 0.82 {'life_penalty': 440.5844, 'ghost_value': 0.5319, 'gamma': 0.9964, 'lr': 0.0003, 'ent_coef': 0.0007, 'epochs': 8, 'gae_lambda': 0.8495, 'reward_scale': 0.0333}
+2026-11-25 20:06:36    ppo kept ppo-r1-18 (random) score 11432 (n 5, lowest seed 6363) success 0.75 {'life_penalty': 174.7847, 'ghost_value': 1.7191, 'gamma': 0.9783, 'lr': 0.0011, 'ent_coef': 0.0037, 'epochs': 5, 'gae_lambda': 0.802, 'reward_scale': 0.0313}
+2026-11-25 20:06:36    ppo kept ppo-r1-02 (random) score 11383 (n 5, lowest seed 9202) success 0.79 {'life_penalty': 357.4032, 'ghost_value': 1.4319, 'gamma': 0.9667, 'lr': 0.0002, 'ent_coef': 0.002, 'epochs': 4, 'gae_lambda': 0.8054, 'reward_scale': 0.0963}
+2026-11-25 20:06:36 improvement in the last quarter of training (q, ppo): [23.2, 24.9] %
+2026-11-25 20:16:03 DECISION after round 1: the budget is kept at 300,000 steps for both models (time).
+2026-11-25 20:16:06 ROUND 2: 20 settings per model, 5 seeds, budget 300000
+2026-11-25 20:16:06 runs: 200, to do 200
+2026-11-25 20:53:22 40 of 200 runs finished
+2026-11-25 21:22:15 80 of 200 runs finished
+2026-11-25 21:52:29 120 of 200 runs finished
+2026-11-25 22:23:17 160 of 200 runs finished
+2026-11-25 23:05:25 200 of 200 runs finished
+2026-11-25 23:05:25 round 2 q: the kept now average 3604; last round's 8 re-tested on new seeds: 2805; best 3845, median 2861, worst 1486
+2026-11-25 23:05:25    q kept q-r2-10 (medium) score 3845 (n 5, lowest seed 2776) success 0.07 {'life_penalty': 413.7555, 'ghost_value': 1.204, 'gamma': 0.9436, 'alpha': 0.0079, 'eps_end': 0.0111, 'eps_frac': 0.3193, 'lam': 0.2666, 'q0': 48.6966}
+2026-11-25 23:05:25    q kept q-r2-06 (fine) score 3721 (n 5, lowest seed 2519) success 0.06 {'life_penalty': 162.1565, 'ghost_value': 2.5811, 'gamma': 0.8, 'alpha': 0.0787, 'eps_end': 0.0133, 'eps_frac': 0.3068, 'lam': 0.7534, 'q0': 57.9757}
+2026-11-25 23:05:25    q kept q-r2-13 (medium) score 3545 (n 5, lowest seed 2486) success 0.04 {'life_penalty': 218.3535, 'ghost_value': 4.0, 'gamma': 0.8468, 'alpha': 0.1524, 'eps_end': 0.0079, 'eps_frac': 0.3881, 'lam': 0.6643, 'q0': 45.3563}
+2026-11-25 23:05:25    q kept q-r2-14 (mix) score 3307 (n 5, lowest seed 2073) success 0.07 {'life_penalty': 413.7555, 'ghost_value': 1.204, 'gamma': 0.9436, 'alpha': 0.0079, 'eps_end': 0.0111, 'eps_frac': 0.1258, 'lam': 0.2666, 'q0': 66.4218}
+2026-11-25 23:05:25 round 2 ppo: the kept now average 17449; last round's 8 re-tested on new seeds: 14273; best 19736, median 13578, worst 8893
+2026-11-25 23:05:25    ppo kept ppo-r2-07 (fine) score 19736 (n 5, lowest seed 17395) success 0.97 {'life_penalty': 384.6975, 'ghost_value': 0.9547, 'gamma': 0.93, 'lr': 0.0003, 'ent_coef': 0.0012, 'epochs': 4, 'gae_lambda': 0.8, 'reward_scale': 0.1}
+2026-11-25 23:05:25    ppo kept ppo-r2-06 (fine) score 17818 (n 5, lowest seed 14363) success 0.93 {'life_penalty': 426.6597, 'ghost_value': 0.5081, 'gamma': 0.9194, 'lr': 0.0001, 'ent_coef': 0.0011, 'epochs': 6, 'gae_lambda': 0.8555, 'reward_scale': 0.0246}
+2026-11-25 23:05:25    ppo kept ppo-r2-16 (mix) score 16408 (n 5, lowest seed 14837) success 0.90 {'life_penalty': 357.4032, 'ghost_value': 1.4319, 'gamma': 0.9667, 'lr': 0.0003, 'ent_coef': 0.002, 'epochs': 8, 'gae_lambda': 0.8495, 'reward_scale': 0.0963}
+2026-11-25 23:05:25    ppo kept ppo-r2-00 (same) score 15954 (n 10, lowest seed 10918) success 0.94 {'life_penalty': 354.5246, 'ghost_value': 0.7276, 'gamma': 0.9391, 'lr': 0.0001, 'ent_coef': 0.0018, 'epochs': 7, 'gae_lambda': 0.8394, 'reward_scale': 0.016}
+2026-11-25 23:05:25 improvement in the last quarter of training (q, ppo): [10.4, 25.6] % -> next budget 300000
+2026-11-25 23:05:25 ROUND 3: 20 settings per model, 5 seeds, budget 300000
+2026-11-25 23:05:25 runs: 200, to do 200
+2026-11-25 23:59:56 40 of 200 runs finished
+2026-11-26 00:47:02 80 of 200 runs finished
+2026-11-26 01:29:10 120 of 200 runs finished
+2026-11-26 01:59:01 160 of 200 runs finished
+2026-11-26 02:26:19 200 of 200 runs finished
+2026-11-26 02:26:19 round 3 q: the kept now average 4880; last round's 8 re-tested on new seeds: 3978; best 6095, median 3598, worst 1955
+2026-11-26 02:26:19    q kept q-r3-15 (mix) score 6095 (n 5, lowest seed 4573) success 0.35 {'life_penalty': 218.3535, 'ghost_value': 4.0, 'gamma': 0.8, 'alpha': 0.0787, 'eps_end': 0.0079, 'eps_frac': 0.3068, 'lam': 0.6643, 'q0': 45.3563}
+2026-11-26 02:26:19    q kept q-r3-12 (medium) score 4656 (n 5, lowest seed 3980) success 0.08 {'life_penalty': 224.6091, 'ghost_value': 2.5811, 'gamma': 0.8925, 'alpha': 0.0787, 'eps_end': 0.0133, 'eps_frac': 0.3068, 'lam': 0.7534, 'q0': 57.9757}
+2026-11-26 02:26:19    q kept q-r3-13 (medium) score 4466 (n 5, lowest seed 3099) success 0.12 {'life_penalty': 413.7555, 'ghost_value': 1.204, 'gamma': 0.9436, 'alpha': 0.0079, 'eps_end': 0.0153, 'eps_frac': 0.1258, 'lam': 0.5048, 'q0': 79.7959}
+2026-11-26 02:26:19    q kept q-r3-14 (mix) score 4302 (n 5, lowest seed 2200) success 0.14 {'life_penalty': 162.1565, 'ghost_value': 2.5811, 'gamma': 0.8, 'alpha': 0.0787, 'eps_end': 0.0133, 'eps_frac': 0.3068, 'lam': 0.7534, 'q0': 57.9757}
+2026-11-26 02:26:19 round 3 ppo: the kept now average 18889; last round's 8 re-tested on new seeds: 18090; best 19128, median 16702, worst 9700
+2026-11-26 02:26:19    ppo kept ppo-r3-00 (same) score 19128 (n 10, lowest seed 12369) success 0.94 {'life_penalty': 384.6975, 'ghost_value': 0.9547, 'gamma': 0.93, 'lr': 0.0003, 'ent_coef': 0.0012, 'epochs': 4, 'gae_lambda': 0.8, 'reward_scale': 0.1}
+2026-11-26 02:26:19    ppo kept ppo-r3-15 (mix) score 19091 (n 5, lowest seed 13659) success 0.95 {'life_penalty': 354.5246, 'ghost_value': 0.7276, 'gamma': 0.9391, 'lr': 0.0001, 'ent_coef': 0.0018, 'epochs': 7, 'gae_lambda': 0.8394, 'reward_scale': 0.016}
+2026-11-26 02:26:19    ppo kept ppo-r3-14 (mix) score 19046 (n 5, lowest seed 15940) success 0.99 {'life_penalty': 384.6975, 'ghost_value': 0.9547, 'gamma': 0.93, 'lr': 0.0003, 'ent_coef': 0.002, 'epochs': 8, 'gae_lambda': 0.8495, 'reward_scale': 0.0963}
+2026-11-26 02:26:19    ppo kept ppo-r3-12 (medium) score 18898 (n 5, lowest seed 16086) success 0.95 {'life_penalty': 500.0, 'ghost_value': 0.9547, 'gamma': 0.93, 'lr': 0.0003, 'ent_coef': 0.0006, 'epochs': 4, 'gae_lambda': 0.8488, 'reward_scale': 0.1}
+2026-11-26 02:26:19 improvement of the kept settings (re-tested on new seeds): {'q': '41.8%', 'ppo': '26.7%'}
+2026-11-26 02:26:19 improvement in the last quarter of training (q, ppo): [15.8, 20.6] % -> next budget 300000
+2026-11-26 02:26:19 end of this call
+2026-11-26 04:24:12    q cloud: overall step 0.078, spread per value [0.04, 0.065, 0.067, 0.121, 0.032, 0.102, 0.182, 0.02] draws again at the limits: 0
+2026-11-26 04:24:12    ppo cloud: overall step 0.053, spread per value [0.02, 0.031, 0.02, 0.058, 0.045, 0.124, 0.051, 0.09] draws again at the limits: 0
+2026-11-26 04:24:12 ROUND 4: 20 settings per model, 5 seeds, budget 300000
+2026-11-26 04:24:12 runs: 200, to do 200
+2026-11-26 04:55:18 40 of 200 runs finished
+2026-11-26 05:22:00 80 of 200 runs finished
+2026-11-26 05:49:30 120 of 200 runs finished
+2026-11-26 06:15:59 160 of 200 runs finished
+2026-11-26 06:41:01 200 of 200 runs finished
+2026-11-26 06:41:01 round 4 q: the kept now average 5031; last round's 4 re-tested on new seeds: 4387; best 5375, median 4268, worst 2580
+2026-11-26 06:41:01    q kept q-r4-04 (cma) score 5375 (n 5, lowest seed 4932) success 0.20 {'life_penalty': 361.143, 'ghost_value': 1.8246, 'gamma': 0.9288, 'alpha': 0.0305, 'eps_end': 0.0143, 'eps_frac': 0.2218, 'lam': 0.6021, 'q0': 68.8793}
+2026-11-26 06:41:01    q kept q-r4-00 (same) score 5289 (n 10, lowest seed 3716) success 0.18 {'life_penalty': 218.3535, 'ghost_value': 4.0, 'gamma': 0.8, 'alpha': 0.0787, 'eps_end': 0.0079, 'eps_frac': 0.3068, 'lam': 0.6643, 'q0': 45.3563}
+2026-11-26 06:41:01    q kept q-r4-05 (cma) score 5166 (n 5, lowest seed 4455) success 0.17 {'life_penalty': 284.4068, 'ghost_value': 2.2419, 'gamma': 0.8332, 'alpha': 0.0121, 'eps_end': 0.0117, 'eps_frac': 0.3711, 'lam': 0.9737, 'q0': 55.1663}
+2026-11-26 06:41:01    q kept q-r4-10 (cma) score 5100 (n 5, lowest seed 3811) success 0.13 {'life_penalty': 273.3181, 'ghost_value': 1.9594, 'gamma': 0.8396, 'alpha': 0.0316, 'eps_end': 0.0149, 'eps_frac': 0.185, 'lam': 0.8355, 'q0': 82.0783}
+2026-11-26 06:41:01 round 4 ppo: the kept now average 18403; last round's 4 re-tested on new seeds: 16795; best 18715, median 17369, worst 6809
+2026-11-26 06:41:01    ppo kept ppo-r4-00 (same) score 18715 (n 15, lowest seed 15040) success 0.93 {'life_penalty': 384.6975, 'ghost_value': 0.9547, 'gamma': 0.93, 'lr': 0.0003, 'ent_coef': 0.0012, 'epochs': 4, 'gae_lambda': 0.8, 'reward_scale': 0.1}
+2026-11-26 06:41:01    ppo kept ppo-r4-03 (same) score 18710 (n 10, lowest seed 15255) success 0.91 {'life_penalty': 500.0, 'ghost_value': 0.9547, 'gamma': 0.93, 'lr': 0.0003, 'ent_coef': 0.0006, 'epochs': 4, 'gae_lambda': 0.8488, 'reward_scale': 0.1}
+2026-11-26 06:41:01    ppo kept ppo-r4-17 (cma) score 18644 (n 5, lowest seed 16880) success 0.93 {'life_penalty': 335.6581, 'ghost_value': 0.6448, 'gamma': 0.9285, 'lr': 0.0004, 'ent_coef': 0.0016, 'epochs': 6, 'gae_lambda': 0.6905, 'reward_scale': 0.1432}
+2026-11-26 06:41:01    ppo kept ppo-r4-18 (cma) score 18555 (n 5, lowest seed 14334) success 0.96 {'life_penalty': 325.6261, 'ghost_value': 0.6568, 'gamma': 0.9394, 'lr': 0.0003, 'ent_coef': 0.0017, 'epochs': 9, 'gae_lambda': 0.8009, 'reward_scale': 0.1415}
+2026-11-26 06:41:01 improvement of the kept settings (re-tested on new seeds): {'q': '10.3%', 'ppo': '-7.2%'}
+2026-11-26 06:41:01 improvement in the last quarter of training (q, ppo): [22.2, 11.5] % -> next budget 300000
+2026-11-26 06:41:01 end of this call
+2026-11-26 06:41:41    q cloud: overall step 0.071, spread per value [0.035, 0.057, 0.059, 0.107, 0.029, 0.09, 0.171, 0.018] draws again at the limits: 1
+2026-11-26 06:41:41    ppo cloud: overall step 0.056, spread per value [0.021, 0.032, 0.021, 0.061, 0.046, 0.127, 0.055, 0.097] draws again at the limits: 0
+2026-11-26 06:41:41 ROUND 5: 20 settings per model, 5 seeds, budget 300000
+2026-11-26 06:41:41 runs: 200, to do 200
+2026-11-26 07:14:26 40 of 200 runs finished
+2026-11-26 07:40:51 80 of 200 runs finished
+2026-11-26 08:08:16 120 of 200 runs finished
+2026-11-26 08:35:04 160 of 200 runs finished
+2026-11-26 08:58:30 200 of 200 runs finished
+2026-11-26 08:58:30 round 5 q: the kept now average 5685; last round's 4 re-tested on new seeds: 5332; best 5870, median 4732, worst 1313
+2026-11-26 08:58:30    q kept q-r5-04 (cma) score 5870 (n 5, lowest seed 5630) success 0.31 {'life_penalty': 390.3889, 'ghost_value': 3.0632, 'gamma': 0.8773, 'alpha': 0.0214, 'eps_end': 0.0107, 'eps_frac': 0.2963, 'lam': 0.7796, 'q0': 55.9415}
+2026-11-26 08:58:30    q kept q-r5-18 (cma) score 5688 (n 5, lowest seed 4838) success 0.27 {'life_penalty': 314.0044, 'ghost_value': 1.3695, 'gamma': 0.8934, 'alpha': 0.0093, 'eps_end': 0.0138, 'eps_frac': 0.3537, 'lam': 0.8905, 'q0': 62.565}
+2026-11-26 08:58:30    q kept q-r5-13 (cma) score 5464 (n 5, lowest seed 4336) success 0.20 {'life_penalty': 380.9427, 'ghost_value': 2.1785, 'gamma': 0.8057, 'alpha': 0.0178, 'eps_end': 0.0137, 'eps_frac': 0.3201, 'lam': 0.8728, 'q0': 50.9769}
+2026-11-26 08:58:30    q kept q-r5-02 (same) score 5442 (n 10, lowest seed 4933) success 0.25 {'life_penalty': 284.4068, 'ghost_value': 2.2419, 'gamma': 0.8332, 'alpha': 0.0121, 'eps_end': 0.0117, 'eps_frac': 0.3711, 'lam': 0.9737, 'q0': 55.1663}
+2026-11-26 08:58:30 round 5 ppo: the kept now average 19831; last round's 4 re-tested on new seeds: 18420; best 20009, median 18527, worst 11153
+2026-11-26 08:58:30    ppo kept ppo-r5-11 (cma) score 20009 (n 5, lowest seed 16015) success 0.99 {'life_penalty': 264.6617, 'ghost_value': 0.9259, 'gamma': 0.9283, 'lr': 0.0004, 'ent_coef': 0.0021, 'epochs': 8, 'gae_lambda': 0.8245, 'reward_scale': 0.0813}
+2026-11-26 08:58:30    ppo kept ppo-r5-04 (cma) score 19960 (n 5, lowest seed 17109) success 0.97 {'life_penalty': 383.1228, 'ghost_value': 0.7196, 'gamma': 0.9438, 'lr': 0.0003, 'ent_coef': 0.0011, 'epochs': 4, 'gae_lambda': 0.8267, 'reward_scale': 0.0384}
+2026-11-26 08:58:30    ppo kept ppo-r5-02 (same) score 19333 (n 10, lowest seed 16760) success 0.94 {'life_penalty': 335.6581, 'ghost_value': 0.6448, 'gamma': 0.9285, 'lr': 0.0004, 'ent_coef': 0.0016, 'epochs': 6, 'gae_lambda': 0.6905, 'reward_scale': 0.1432}
+2026-11-26 08:58:30    ppo kept ppo-r5-09 (cma) score 19331 (n 5, lowest seed 17705) success 0.99 {'life_penalty': 382.1877, 'ghost_value': 0.6809, 'gamma': 0.9377, 'lr': 0.0003, 'ent_coef': 0.0006, 'epochs': 7, 'gae_lambda': 0.8644, 'reward_scale': 0.1061}
+2026-11-26 08:58:30 improvement of the kept settings (re-tested on new seeds): {'q': '21.5%', 'ppo': '9.7%'}
+2026-11-26 08:58:30 improvement in the last quarter of training (q, ppo): [30.8, 15.1] % -> next budget 300000
+2026-11-26 08:58:30 end of this call
+2026-11-26 08:58:32    q cloud: overall step 0.066, spread per value [0.032, 0.052, 0.054, 0.097, 0.027, 0.082, 0.158, 0.016] draws again at the limits: 1
+2026-11-26 08:58:32    ppo cloud: overall step 0.053, spread per value [0.02, 0.03, 0.019, 0.058, 0.044, 0.122, 0.051, 0.092] draws again at the limits: 0
+2026-11-26 08:58:32 ROUND 6: 20 settings per model, 5 seeds, budget 300000
+2026-11-26 08:58:32 runs: 200, to do 200
+2026-11-26 09:32:30 40 of 200 runs finished
+2026-11-26 10:00:25 80 of 200 runs finished
+2026-11-26 10:28:59 120 of 200 runs finished
+2026-11-26 10:58:48 160 of 200 runs finished
+2026-11-26 11:26:17 200 of 200 runs finished
+2026-11-26 11:26:17 round 6 q: the kept now average 5767; last round's 4 re-tested on new seeds: 5554; best 6372, median 4972, worst 1808
+2026-11-26 11:26:17    q kept q-r6-11 (cma) score 6372 (n 5, lowest seed 5472) success 0.34 {'life_penalty': 292.5565, 'ghost_value': 2.2765, 'gamma': 0.8973, 'alpha': 0.0286, 'eps_end': 0.0133, 'eps_frac': 0.3594, 'lam': 0.7793, 'q0': 67.6032}
+2026-11-26 11:26:17    q kept q-r6-00 (same) score 5846 (n 10, lowest seed 4583) success 0.19 {'life_penalty': 390.3889, 'ghost_value': 3.0632, 'gamma': 0.8773, 'alpha': 0.0214, 'eps_end': 0.0107, 'eps_frac': 0.2963, 'lam': 0.7796, 'q0': 55.9415}
+2026-11-26 11:26:17    q kept q-r6-02 (same) score 5520 (n 10, lowest seed 5294) success 0.20 {'life_penalty': 380.9427, 'ghost_value': 2.1785, 'gamma': 0.8057, 'alpha': 0.0178, 'eps_end': 0.0137, 'eps_frac': 0.3201, 'lam': 0.8728, 'q0': 50.9769}
+2026-11-26 11:26:17    q kept q-r6-01 (same) score 5492 (n 10, lowest seed 3502) success 0.22 {'life_penalty': 314.0044, 'ghost_value': 1.3695, 'gamma': 0.8934, 'alpha': 0.0093, 'eps_end': 0.0138, 'eps_frac': 0.3537, 'lam': 0.8905, 'q0': 62.565}
+2026-11-26 11:26:17 round 6 ppo: the kept now average 20671; last round's 4 re-tested on new seeds: 17223; best 22448, median 18333, worst 16459
+2026-11-26 11:26:17    ppo kept ppo-r6-13 (cma) score 22448 (n 5, lowest seed 19640) success 0.97 {'life_penalty': 371.7218, 'ghost_value': 0.6396, 'gamma': 0.9119, 'lr': 0.0003, 'ent_coef': 0.0013, 'epochs': 6, 'gae_lambda': 0.8266, 'reward_scale': 0.0385}
+2026-11-26 11:26:17    ppo kept ppo-r6-19 (cma) score 20092 (n 5, lowest seed 18258) success 0.93 {'life_penalty': 360.4932, 'ghost_value': 0.6382, 'gamma': 0.9443, 'lr': 0.0002, 'ent_coef': 0.0014, 'epochs': 8, 'gae_lambda': 0.6985, 'reward_scale': 0.0598}
+2026-11-26 11:26:17    ppo kept ppo-r6-11 (cma) score 20075 (n 5, lowest seed 17434) success 0.93 {'life_penalty': 351.6022, 'ghost_value': 0.7245, 'gamma': 0.9255, 'lr': 0.0002, 'ent_coef': 0.0009, 'epochs': 7, 'gae_lambda': 0.8791, 'reward_scale': 0.0458}
+2026-11-26 11:26:17    ppo kept ppo-r6-08 (cma) score 20069 (n 5, lowest seed 15936) success 0.95 {'life_penalty': 319.1634, 'ghost_value': 0.5913, 'gamma': 0.9314, 'lr': 0.0002, 'ent_coef': 0.0017, 'epochs': 6, 'gae_lambda': 0.8283, 'reward_scale': 0.0166}
+2026-11-26 11:26:17 improvement of the kept settings (re-tested on new seeds): {'q': '4.2%', 'ppo': '-6.5%'}
+2026-11-26 11:26:17 improvement in the last quarter of training (q, ppo): [20.7, 16.0] % -> next budget 300000
+2026-11-26 11:26:17 STOP RULE: less than 10% improvement for both models
+2026-11-26 11:26:17 end of this call
+2026-11-26 11:27:09 WINNER: the best average score of each model in round 6
+2026-11-26 11:27:09    winner q q-r6-11: score 6372 over 5 seeds, 34% of 100 tuning test games reach 6,952 {'life_penalty': 292.5564992047303, 'ghost_value': 2.276482865076297, 'gamma': 0.8972608644098748, 'alpha': 0.028562037978283786, 'eps_end': 0.013283388706688246, 'eps_frac': 0.35941228419310056, 'lam': 0.7793224460685679, 'q0': 67.60320863379657}
+2026-11-26 11:27:09    winner ppo ppo-r6-13: score 22448 over 5 seeds, 97% of 100 tuning test games reach 6,952 {'life_penalty': 371.7218149082364, 'ghost_value': 0.639560214068881, 'gamma': 0.9119436100983862, 'lr': 0.00031858392767548157, 'ent_coef': 0.0012838462813165303, 'epochs': 6, 'gae_lambda': 0.8265808317947319, 'reward_scale': 0.038492486130842274}
+2026-11-26 11:27:09 WINNERS {"q": {"sid": "q-r6-11", "hp": {"life_penalty": 292.5564992047303, "ghost_value": 2.276482865076297, "gamma": 0.8972608644098748, "alpha": 0.028562037978283786, "eps_end": 0.013283388706688246, "eps_frac": 0.35941228419310056, "lam": 0.7793224460685679, "q0": 67.60320863379657}, "score": 6372.0199999999995, "seeds": 5, "budget": 300000, "share_at_6952": 0.34, "games": 100}, "ppo": {"sid": "ppo-r6-13", "hp": {"life_penalty": 371.7218149082364, "ghost_value": 0.639560214068881, "gamma": 0.9119436100983862, "lr": 0.00031858392767548157, "ent_coef": 0.0012838462813165303, "epochs": 6, "gae_lambda": 0.8265808317947319, "reward_scale": 0.038492486130842274}, "score": 22448.089999999997, "seeds": 5, "budget": 300000, "share_at_6952": 0.97, "games": 100}}

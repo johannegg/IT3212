@@ -1,6 +1,27 @@
 # Q-learning vs PPO on MsPacman (IT3212 Assignment 4, Group 44)
 
-## Repository layout
+## Current version: `score_game/`
+
+`score_game/` replaces the setup described in the rest of this file. It plays the full game for score (3 lives, all 4 mazes), tunes both models with the same search allowance, and runs Settings A–D and Part 3 with the winning settings. Every choice and its reason is in [design_decisions.md](design_decisions.md). The rest of this file describes the first Part 2 version, kept unchanged with its results in `records/part2/`.
+
+```bash
+pip install -r requirements.txt
+bash score_game/run_all.sh      # tuning, winner pick, Settings A-D, A-D summary, Part 3
+```
+
+| Path | Content |
+|---|---|
+| `score_game/game/` | The game (ALE MsPacman-v5 read from memory), the inputs and both agents |
+| `score_game/tune.py` | The tuning loop (design_decisions.md section 6) |
+| `score_game/tuning/` | Every tuning run (`results.jsonl`), every choice of the loop (`decisions.log`), the plans, rankings and CMA-ES state of each round, and the winners (`winners.json`, `x.json`) |
+| `score_game/tuning/sim/` | The simulations behind the tuning design (rows 6.9, 6.18, 6.19) |
+| `score_game/run_ad.py`, `summarize.py` | Settings A–D, 5 seeds per model, 200 test games per agent → `score_game/records/ad/` |
+| `score_game/run_part3.py` | Part 3: one factor at a time from the winners (×1/3 and ×3), 5 seeds each → `score_game/records/part3/` |
+| `score_game/baseline.py` | Hand-written and random players as a reference |
+
+Each step skips work that is already saved, so `run_all.sh` can be stopped and started again. A tuning run is about 7 minutes (Q-learning) or 13 minutes (PPO) on one CPU core; `run_all.sh` uses 15 workers by default (`WORKERS=4 bash score_game/run_all.sh` for fewer).
+
+## Repository layout (first Part 2 version)
 
 ```
 pacman_rl/            environment, features and agents (shared by all parts)

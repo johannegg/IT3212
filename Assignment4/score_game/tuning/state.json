@@ -1,0 +1,9 @@
+{
+ "round": 7,
+ "budget": 300000,
+ "last_avg": {
+  "q": 5554.1925,
+  "ppo": 17222.7475
+ },
+ "finished": true
+}
