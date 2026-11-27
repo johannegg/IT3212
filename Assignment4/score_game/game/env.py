@@ -46,7 +46,7 @@ class Setting:
     start_maze: str = "train"            # "train" = maze 1, 2 or 3 at random, or the number of a maze (0-3)
     keep_maze: bool = False              # Setting D: after a clear the game stays on the same maze (the layout byte is written back)
     success_score: float = 6952.0        # counted as success when the game ends with at least this score
-    success_bonus: float = 0.0           # added to the training reward at the end of a successful game
+    success_bonus: float = 0.0           # added to the training reward once, at the step where the score first reaches success_score
 
     def to_dict(self): return asdict(self)
 
@@ -98,7 +98,7 @@ class ScoreGame:
         self.start_layout = layout
         if layout: self.ale.setRAM(RAM_MAZE, layout)
         self.env_steps = self.decisions = self.idle = 0
-        self.score = 0.0; self.lives = 3; self.lost = 0; self.over = False; self.edible = [False] * 4; self.eyes = [False] * 4; self.chain = 0; self.ghost_points = 0.0; self.ghosts_eaten = 0
+        self.score = 0.0; self.lives = 3; self.lost = 0; self.over = False; self.edible = [False] * 4; self.eyes = [False] * 4; self.chain = 0; self.ghost_points = 0.0; self.ghosts_eaten = 0; self.bonus_paid = False
         self._raw(0)                                        # the game draws the maze
         self.layout = layout
         for _ in range(70):                                 # the intro in which nobody moves
@@ -165,7 +165,7 @@ class ScoreGame:
         done = self.over
         r = gained + (self.ghost_value - 1.0) * (self.ghost_points - ghost0) - self.life_penalty * lost - self.s.step_penalty
         success = self.score >= self.s.success_score
-        if (done or truncated) and success: r += self.s.success_bonus
+        if success and not self.bonus_paid: r += self.s.success_bonus; self.bonus_paid = True     # paid when success is decided (the score never drops), not at the last death
         info = {"points": gained, "lost": lost, "score": self.score, "stuck": self.idle >= STUCK_STEPS, "held_out": bool(held_out)}
         if done or truncated:
             info["outcome"] = "success" if success else ("failure" if done else "timeout")

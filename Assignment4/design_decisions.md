@@ -28,14 +28,15 @@ The choices behind the game, the agents and the tuning in `score_game/`, with th
 | # | Topic | Our choice | Status |
 |---|---|---|---|
 | 2.1 | Success | Reach X points before game over. The assignment needs a success rate, so a limit is required | Decided |
-| 2.2 | X | 6,952, a human's score (2.9). If more than 90% of the tuning test games of **either** model's winner reach it, X is the higher published human score, 15,693, for **both** models, so that there are successes and failures for Part 4. X is set by this rule after the tuning and before A–D (`winners.json`, `share_at_6952`), and is otherwise changed only if a better source gives another human number. Nothing in the tuning uses it | Decided |
+| 2.2 | X | 6,952, a human's score (2.9), for both models (`score_game/tuning/x.json`). A rule to raise X to 15,693 when more than 90% of either winner's tuning test games reach 6,952 was replaced before the A–D results were seen: PPO's winner reached 6,952 in 97% of its tuning games and Q-learning's in 34%, so at 15,693 Q-learning would have had no successes (0% in tuning). At 6,952 Q-learning has successes, and PPO still has failures for Part 4. 6,952 is also the only published human number that is used as an average human (2.13), and it fits what the models reach. Nothing in the tuning uses X, but the A–D training does (2.6) | Decided |
 | 2.3 | Failure | Game over before X points | Decided |
 | 2.4 | Does the game stop at X? | No, it is played to game over. Success is counted from the final score | Decided |
 | 2.5 | Reward | Testing and choosing the best setting: the game's own points, 1:1 and with no limit per step. Training: the same points plus the two guides in 5.14 and 5.16. PPO can scale the numbers inside its own learning, because large numbers make it learn badly | Decided |
-| 2.6 | Success reward | None in tuning, so that X can be set afterwards. In A–D a small fixed reward (250 points) when the game ends with success, because Setting A asks for a terminal success reward | Decided |
+| 2.6 | Success reward | None in tuning, so that X can be set afterwards. In A–D, because Setting A asks for a terminal success reward: 1,600 points, paid once at the step where the score reaches X. Success is decided at that moment, because the score never drops. 1,600 is the largest single reward in the game (the fourth ghost), so reaching the goal counts as much as the best single event. It is also 4–5 times one lost life in the winners' training reward (life penalty 293 for Q-learning, 372 for PPO), while the earlier 250 was less than one lost life. It is not paid at the end of the game: there it would come with the last death and cancel most of the life penalty (293 for Q-learning, 372 for PPO), which makes dying after X almost free. A reward of 250 at the end of the game was replaced for that reason before any A–D results were used. No paper gives a best-practice size for such a reward | Decided |
 | 2.7 | Reported for each agent | Average score, success, failure and game length | Assignment |
 | 2.8 | Number used in tuning | The average score over several trained agents, never the best agent | Decided |
-| 2.9 | Which human score | 6,952, the lower of the two published numbers. To be checked against the original papers | Decided |
+| 2.9 | Which human score | 6,952 (2.13). Checked in the original papers (8.25, 8.26) | Decided |
+| 2.14 | Time limit | None. The human scores come from games of at most 5 minutes (8.25), and ours are played to game over. Humans and agents differ anyway, and X is a goal for the agents to go for, not a claim that they match humans | Decided |
 
 **Reference scores**
 
@@ -44,7 +45,7 @@ The choices behind the game, the agents and the tuning in `score_game/`, with th
 | 2.10 | Random play (20 games, measured on the default game) | 276 |
 | 2.11 | Random play, published | 307 |
 | 2.12 | DQN (a deep learning agent), published | 2,311 |
-| 2.13 | Human, published, two papers | 6,952 and 15,693 |
+| 2.13 | Human, published | 15,693: one professional games tester, about 20 games of at most 5 minutes after about 2 hours of practice (8.25). 6,951.6: the human score in later DeepMind papers (8.26), whose origin is not stated there; later papers call it "average human" |
 
 Published numbers come from [endtoend.ai](https://www.endtoend.ai/envs/gym/atari/ms-pacman/) and must be checked against the original papers before they are cited.
 
@@ -74,10 +75,10 @@ Published numbers come from [endtoend.ai](https://www.endtoend.ai/envs/gym/atari
 |---|---|---|---|
 | 5.1 | A | Nothing random in the game itself | Assignment |
 | 5.2 | B | Random: 25% sticky actions per frame. This is the default game | Assignment |
-| 5.3 | C | B with a step penalty of 0.5 per step, moving or not. Part 2 used 0.05 when a dot was worth 1, and a dot is now 10. It is not used in tuning, A, B or D, because the only difference between B and C must be this penalty | Assignment (penalty), Decided |
+| 5.3 | C | B with a step penalty of 0.5 per step, moving or not. Part 2 used 0.05 when a dot was worth 1, and a dot is now 10. The winners earn 4.4 (Q-learning) and 5.6 (PPO) points per decision in tuning, so the penalty is about 10% of that: it pushes for shorter routes where no points are earned, while surviving still pays. A larger penalty was not chosen, because a step penalty that comes close to what surviving earns teaches the agent to end the game early (8.27). No paper gives a best-practice size. It is not used in tuning, A, B or D, because the only difference between B and C must be this penalty | Assignment (penalty), Decided |
 | 5.4 | D | The B agents on the held-out maze | Assignment |
 | 5.5 | Budget | 300,000 steps per training run in every round, the same for both models and all settings. A–D and Part 3 use the same. A higher budget (up to 1 million) was considered, but it doubles the training time or more | Decided |
-| 5.6 | Seeds | 5 training seeds, and 200 test games on a new list that is not used for anything else | Assignment |
+| 5.6 | Seeds | 5 training seeds, and 200 test games on a new list that is not used for anything else. After the 5-seed results, seeds 5–9 and then 10–14 are added to A–D and Part 3 (`run_more_seeds.sh`) while the machine would otherwise stand idle, with 15 as the upper limit. A–D and Part 3 always have the same seeds, because Part 3 reuses the A–D Setting B agents as its middle value | Assignment (minimum 5), Decided |
 | 5.7 | Tuning | Redone for the new game, see section 6 | Decided |
 | 5.8 | Predictions | Part 1 stays unchanged. Changed choices are noted, as section 1.3 of the report says | Assignment |
 | 5.9 | States 1–3 | The rule for finding them in the recorded games is written before anyone studies the recordings | Suggested |
@@ -164,6 +165,9 @@ Many settings are tried, the best are kept, and new settings are made from them.
 | 8.22 | [Random immigrants in genetic algorithms, an overview of the idea](https://arxiv.org/pdf/1912.08397) | Fully random newcomers are often not good enough to win late; making newcomers by changing the best ones is an alternative (6.2). Mostly about changing environments | Search result |
 | 8.23 | [Yang 2007, elitism-based immigrants](https://www.cs.le.ac.uk/people/syang/Papers/EvoSTOC07_1.pdf) | Newcomers made by changing the best ones instead of fully random ones (6.2). About changing environments | Search result |
 | 8.24 | [Hansen 2016, The CMA Evolution Strategy: A Tutorial](https://arxiv.org/abs/1604.00772) | The CMA-ES method and its default constants (6.19); drawing again instead of clipping at the limits, appendix B.5 (6.17) | The algorithm summary, the default constants and appendix B.5 |
+| 8.25 | [Mnih et al. 2015, Human-level control through deep reinforcement learning](https://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf) | Human 15,693, random 307.3, DQN 2,311 for Ms. Pacman (Extended Data Table 2), and how the human score was measured (Methods) (2.13, 2.14) | Whole paper |
+| 8.26 | [Wang et al. 2016, Dueling Network Architectures](https://arxiv.org/abs/1511.06581) | Human 6,951.6 and random 307.3 for Ms. Pac-Man with 30 no-op starts (Table 2); 15,375 with human starts (Table 3) (2.13) | Whole paper |
+| 8.27 | [Concise Reasoning via Reinforcement Learning, arXiv 2504.05185](https://arxiv.org/pdf/2504.05185) | A step penalty must be large enough to affect decisions but not dominate the goal, and can teach the agent to end early (5.3). About language models | Search result |
 
 Sources marked *Search result* have only been read as excerpts and must be read before they are cited in the report. Rows 8.10–8.13 and 8.19–8.23 support the method of rounds 1–3 (6.2).
 
@@ -196,4 +200,15 @@ Not needed if the results are good enough. Each can be added later if it is done
 | 10.6 | Design and run the diagnostic experiment for Part 3 | After the Part 3 results | Required by Part 3 |
 | 10.7 | AI-assistance log | Before submission | Required by the assignment |
 | 10.8 | Run the reference players (`baseline.py`) | Any time after the winners are picked | A reference line for the results; no training |
-| 10.9 | Decide whether to add seeds 5–9 to A–D and Part 3 | After A–D | More seeds make differences easier to see; the scripts skip finished runs, so they can be added later |
+| 10.10 | Refine the arguments in this file (it was written while the work was in progress). For example, 2.6: the success reward was left out of the tuning because the scores the models would reach were not known in advance, and adding it later could have meant redoing the whole tuning | Before the report is written | Several rows still carry their first, rougher reasons |
+
+## 11. Trade-offs from limited training resources
+
+The assignment's team "has limited training resources", and so did we. Every choice below spends the same limited compute. More rounds of tuning were judged worth more than wider rounds (more settings per round) or longer runs with more seeds. With unlimited compute, each of them could be doubled. For the report: Part 2, rules 1 (justify the budget) and 6 (same search allowance), and briefly in Part 6.
+
+| # | Trade-off | Instead of | Row |
+|---|---|---|---|
+| 11.1 | 300,000 steps per training run | A higher budget, which doubles the training time or more | 5.5 |
+| 11.2 | More rounds of 20 settings | Fewer, wider rounds | 6.18 |
+| 11.3 | 5 seeds per setting in tuning, with the honest score measured in A–D | More seeds per setting | 6.7, 6.11 |
+| 11.4 | Tuning stopped when the gain fell below 10% | More rounds | 6.5 |

@@ -1,4 +1,4 @@
-"""Part 3: change one factor at a time from the winner's settings, in Setting B (5 agents each, the same budget and seeds as A-D).
+"""Part 3: change one factor at a time from the winner's settings, in Setting B (one agent per training seed, the same budget and seeds as A-D).
 
     python run_part3.py [--workers 14] [--only exploration,...] [--summarize-only]
 
@@ -78,7 +78,7 @@ def summarize(W, jobs):
 
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument("--workers", type=int, default=14); p.add_argument("--only", default=None); p.add_argument("--summarize-only", action="store_true"); p.add_argument("--plan", action="store_true"); a = p.parse_args(); os.environ["AD_WORKERS"] = str(a.workers); x = success_line(); bonus = 250.0; W, jobs = plan(x, bonus)
+    p = argparse.ArgumentParser(); p.add_argument("--workers", type=int, default=14); p.add_argument("--only", default=None); p.add_argument("--summarize-only", action="store_true"); p.add_argument("--plan", action="store_true"); a = p.parse_args(); os.environ["AD_WORKERS"] = str(a.workers); x = success_line(); bonus = SUCCESS_BONUS; W, jobs = plan(x, bonus)
     if a.only: jobs = {k: v for k, v in jobs.items() if v[1] in a.only.split(",")}
     for nm, (al, inv, fac, v, hp, b) in jobs.items(): print(f"{nm:40s} {fac} = {v:.5g} (winner {W[al][0][fac]:.5g})")
     if a.plan: return

@@ -1,0 +1,46 @@
+{
+ "algo": "q",
+ "setting": {
+  "name": "B",
+  "sticky": 0.25,
+  "step_penalty": 0.0,
+  "start_maze": "train",
+  "keep_maze": false,
+  "success_score": 6952.0,
+  "success_bonus": 1600.0
+ },
+ "seed": 14,
+ "budget": 300000,
+ "env_steps": 300000,
+ "hp": {
+  "life_penalty": 292.5564992047303,
+  "ghost_value": 2.276482865076297,
+  "gamma": 0.8972608644098748,
+  "alpha": 0.028562037978283786,
+  "eps_end": 0.013283388706688246,
+  "eps_frac": 0.35941228419310056,
+  "lam": 0.7793224460685679,
+  "q0": 67.60320863379657
+ },
+ "train_minutes": 7.461737382411957,
+ "curve_minutes": 1.4627817273139954,
+ "games": 385,
+ "rows": 2041,
+ "curve": {
+  "points": 12,
+  "games": 5,
+  "smoothing": "none"
+ },
+ "software": {
+  "python": "3.13.11",
+  "numpy": "2.5.3",
+  "torch": "2.14.1+cpu",
+  "gymnasium": "1.4.0",
+  "ale_py": "0.12.1",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "cpu": "AMD Ryzen 7 PRO 6850U with Radeon Graphics",
+  "cpu_threads": 16,
+  "workers": "15"
+ },
+ "finished": "2026-11-26 23:26:18"
+}

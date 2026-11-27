@@ -1,7 +1,8 @@
 {
- "x": 15693,
+ "x": 6952,
  "share_at_6952": {
   "q": 0.34,
   "ppo": 0.97
- }
+ },
+ "note": "Set to 6,952 by decision (design_decisions.md 2.2), not by the 90% rule"
 }

@@ -19,7 +19,7 @@ from game.run import PPO_HP, Q_HP, guides
 HERE = os.path.dirname(os.path.abspath(__file__))
 # Lists of games. They never overlap with the tuning (100,000,000+ and 300,000,000+) or with each other.
 CURVE_BASE, TEST_BASE, DIAG_BASE, N_TEST, CURVE_POINTS, CURVE_GAMES = 400_000_000, 500_000_000, 700_000_000, 200, 12, 5
-TRAIN_SEEDS = [0, 1, 2, 3, 4]
+TRAIN_SEEDS = [int(s) for s in os.environ.get("SEEDS", "0,1,2,3,4").split(",")]      # SEEDS=5,6,7,8,9 adds agents; finished seeds are skipped
 NAMES = {"q": "Q-learning", "ppo": "PPO"}
 
 
@@ -29,7 +29,8 @@ def winners():
 
 
 def success_line():
-    """X (decisions 2.2): 6,952, or 15,693 when more than 90% of the tuning test games of either winner reach 6,952."""
+    """X (decisions 2.2). Read from tuning/x.json (now 6,952 by decision); without that file: 6,952, or 15,693 when more than 90% of
+    the tuning test games of either winner reach 6,952."""
     f = os.path.join(HERE, "tuning", "x.json")
     if os.path.exists(f): return json.load(open(f))["x"]
     w = json.load(open(os.path.join(HERE, "tuning", "winners.json")))
@@ -45,6 +46,9 @@ def software():
         with open("/proc/cpuinfo") as f: cpu = next(l.split(":")[1].strip() for l in f if l.startswith("model name"))
     except (OSError, StopIteration): pass
     return dict(python=platform.python_version(), numpy=np.__version__, torch=torch.__version__, gymnasium=gymnasium.__version__, ale_py=ale_py.__version__, platform=platform.platform(), cpu=cpu, cpu_threads=os.cpu_count(), workers=os.environ.get("AD_WORKERS"))
+
+
+SUCCESS_BONUS = 1600.0       # decisions 2.6: the largest single reward in the game (the fourth ghost)
 
 
 def setting_of(name, x, bonus):

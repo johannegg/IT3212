@@ -19,7 +19,7 @@ bash score_game/run_all.sh      # tuning, winner pick, Settings A-D, A-D summary
 | `score_game/run_part3.py` | Part 3: one factor at a time from the winners (×1/3 and ×3), 5 seeds each → `score_game/records/part3/` |
 | `score_game/baseline.py` | Hand-written and random players as a reference |
 
-Each step skips work that is already saved, so `run_all.sh` can be stopped and started again. A tuning run is about 7 minutes (Q-learning) or 13 minutes (PPO) on one CPU core; `run_all.sh` uses 15 workers by default (`WORKERS=4 bash score_game/run_all.sh` for fewer).
+Each step skips work that is already saved, so `run_all.sh` can be stopped and started again. `bash score_game/run_more_seeds.sh` adds training seeds 5–9 and then 10–14 to A–D and Part 3, and redoes the summaries after each block. A tuning run is about 7 minutes (Q-learning) or 13 minutes (PPO) on one CPU core; `run_all.sh` uses 15 workers by default (`WORKERS=4 bash score_game/run_all.sh` for fewer).
 
 ## Repository layout (first Part 2 version)
 

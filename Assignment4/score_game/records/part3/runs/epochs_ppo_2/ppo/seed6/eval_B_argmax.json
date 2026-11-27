@@ -1,0 +1,19 @@
+{
+ "setting": "B",
+ "mode": "argmax",
+ "episodes": 200,
+ "x": 6952,
+ "minutes": 26.687679862976076,
+ "score": 20375.645,
+ "return_mean": 21879.645,
+ "score_sd_games": 7709.593223962922,
+ "success": 0.94,
+ "failure": 0.06,
+ "timeout": 5.551115123125783e-17,
+ "reach_2311": 1.0,
+ "reach_6952": 0.94,
+ "reach_15693": 0.75,
+ "len_success": 3901.941489361702,
+ "len_failure": 1187.3333333333333,
+ "ghosts": 28.6
+}

@@ -26,7 +26,7 @@ def main():
     L = ["| Test | Trained in | Model | Policy | Agents | Score | Return | Success | Failure | Timeout | Length (success) | Length (failure) | Training steps | Training time (min) |", "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     f = lambda r, k, n=2: f"{r[k + '_mean']:.{n}f} ± {0 if np.isnan(r[k + '_std']) else r[k + '_std']:.{n}f}"
     for k, r in s.iterrows(): L.append(f"| {k[0]} | {k[1]} | {NAMES[k[2]]} | {k[3]} | {int(r['agents'])} | {f(r, 'score', 0)} | {f(r, 'ret', 0)} | {f(r, 'success')} | {f(r, 'failure')} | {f(r, 'timeout')} | {'-' if np.isnan(r['len_success_mean']) else f(r, 'len_success', 0)} | {'-' if np.isnan(r['len_failure_mean']) else f(r, 'len_failure', 0)} | {r['train_env_steps_mean']:.0f} | {f(r, 'train_minutes', 1)} |")
-    L.append(f"\nMean ± standard deviation across trained agents (one value per agent, 200 held-out games each). Score and success use the game's real points. Return = points, +250 for success, and -0.5 per step in C; it is not comparable between B and C. Success rate = share of an agent's 200 games with at least X points, then the mean over agents; success = at least {int(d.x.iloc[0])} points. Training returns use the guides of each model and are not comparable between models.")
+    L.append(f"\nMean ± standard deviation across trained agents (one value per agent, 200 held-out games each). Score and success use the game's real points. Return = points, +1,600 once when the score reaches X, and -0.5 per decision in C; it is not comparable between B and C. Success rate = share of an agent's 200 games with at least X points, then the mean over agents; success = at least {int(d.x.iloc[0])} points. Training returns use the guides of each model and are not comparable between models.")
     open(os.path.join(out, "summary.md"), "w").write("\n".join(L)); print("\n".join(L))
     for name in ("A", "B", "C"):
         fig, ax = plt.subplots(1, 2, figsize=(13, 4.3)); src = []
@@ -39,7 +39,7 @@ def main():
                 ax[i].plot(cv[0].env_steps[:n], np.mean([c[key].values[:n] for c in cv], 0), color=col, lw=2.2, label=f"{NAMES[al]} (mean of {len(cv)} agents)")
         for i, t in enumerate(("Score per test game", "Success rate")): ax[i].set_xlabel("Environment interactions"); ax[i].set_ylabel(t); ax[i].grid(alpha=.3); ax[i].legend(fontsize=8)
         fig.suptitle(f"Setting {name}: learning curves (every {int(d[d.train_setting == name].train_env_steps.mean() // 12 // 1000 * 1000)} interactions, 5 test games, no smoothing; thin lines = single agents)", fontsize=10)
-        fig.text(.01, .005, "Source runs: " + ", ".join(sorted({x.rsplit('/', 1)[0] + '/seed0-4' for x in src})), fontsize=6.5, color="0.35"); fig.tight_layout(rect=(0, .03, 1, 1)); fig.savefig(os.path.join(out, f"curves_{name}.png"), dpi=150); plt.close(fig)
+        sd = sorted({int(x.rsplit('seed', 1)[1]) for x in src}); fig.text(.01, .005, "Source runs: " + ", ".join(sorted({x.rsplit('/', 1)[0] + f'/seed{sd[0]}-{sd[-1]}' for x in src})), fontsize=6.5, color="0.35"); fig.tight_layout(rect=(0, .03, 1, 1)); fig.savefig(os.path.join(out, f"curves_{name}.png"), dpi=150); plt.close(fig)
 
 
 if __name__ == "__main__": main()

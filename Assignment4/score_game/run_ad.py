@@ -1,6 +1,6 @@
 """Part 2: Settings A-D with the settings the tuning found.   python run_ad.py [--workers 14]
 
-Trains 5 agents per model in A, B and C (30 runs), tests each with 200 held-out games (the B agents also in D), writes records/ad/.
+Trains one agent per training seed (TRAIN_SEEDS, 5 by default) per model in A, B and C, tests each with 200 held-out games (the B agents also in D), writes records/ad/.
 Finished runs and tests are skipped, so it can be stopped and started again."""
 import argparse
 import glob
@@ -29,7 +29,7 @@ def eval_job(a):
 
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument("--workers", type=int, default=14); p.add_argument("--quick", action="store_true"); p.add_argument("--bonus", type=float, default=250.0); a = p.parse_args()
+    p = argparse.ArgumentParser(); p.add_argument("--workers", type=int, default=14); p.add_argument("--quick", action="store_true"); p.add_argument("--bonus", type=float, default=SUCCESS_BONUS); a = p.parse_args()
     os.environ["AD_WORKERS"] = str(a.workers); root = os.path.join(HERE, "records", "ad_quick") if a.quick else ROOT
     if a.quick: hp = {"q": dict(life_penalty=100, ghost_value=1, gamma=.95, alpha=.1, eps_end=.03, eps_frac=.5, lam=.6, q0=0.), "ppo": dict(life_penalty=100, ghost_value=1, gamma=.97, lr=3e-4, ent_coef=.01, epochs=4, gae_lambda=.9, reward_scale=.1)}; budget, seeds, n, x = {"q": 8000, "ppo": 8000}, [0, 1], 4, 2000
     else: w = winners(); hp = {k: w[k][0] for k in w}; budget = {k: w[k][1] for k in w}; seeds, n, x = TRAIN_SEEDS, N_TEST, success_line()

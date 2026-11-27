@@ -1,0 +1,19 @@
+{
+ "setting": "A",
+ "mode": "greedy",
+ "episodes": 200,
+ "x": 6952,
+ "minutes": 6.976012706756592,
+ "score": 7209.48,
+ "return_mean": 8073.48,
+ "score_sd_games": 2475.659388849767,
+ "success": 0.54,
+ "failure": 0.46,
+ "timeout": -5.551115123125783e-17,
+ "reach_2311": 0.98,
+ "reach_6952": 0.54,
+ "reach_15693": 0.01,
+ "len_success": 1331.3333333333333,
+ "len_failure": 1207.3478260869565,
+ "ghosts": 10.24
+}
